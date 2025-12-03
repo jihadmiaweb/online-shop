@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import StarGroup from "@/components/starGroup";
@@ -39,7 +40,7 @@ function ProductSearchForm() {
                     <div className="absolute top-full left-0 w-full border flex flex-col justify-between">
                         <div className="p-3 overflow-y-scroll h-64">
                             {searchData.length == 0 && <div className="text-center py-5">No data found</div>}
-                            {searchData.map(item => (
+                            {searchData.map((item: any) => (
                                 <div key={item.id} className="flex border-b mb-3 pb-3">
                                     <div className="w-24">
                                         <Image
