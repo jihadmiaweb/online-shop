@@ -1,4 +1,5 @@
 import PublicMainMenu from "@/components/public/mainMenu";
+import Navber from "@/components/public/Navber";
 import { Heart, MapPin } from "lucide-react";
 import Link from "next/link";
 
@@ -44,6 +45,7 @@ function PublicHider() {
             </div>
 
             <PublicMainMenu />
+            <Navber />
         </>
     );
 }
