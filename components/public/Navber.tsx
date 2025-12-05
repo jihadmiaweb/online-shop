@@ -4,10 +4,10 @@ import Link from "next/link";
 
 function Navber() {
     return (
-        <div>
+        <div className="bg-white ">
             <div className="my-container">
                 <div className="flex">
-                    <div className="relative ">
+                    <div className="relative bg-white ">
                         <GrouphoverCategories />
                     </div>
 

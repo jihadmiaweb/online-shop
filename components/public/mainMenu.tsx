@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function PublicMainMenu() {
     return (
-        <div className="py-4 relative">
+        <div className="py-4 relative bg-white ">
             <div className="my-container">
                 <div className="flex items-center">
                     <Link href={"/"}>

@@ -10,7 +10,7 @@ function PublickmineManuMobill() {
 
     const [active, setactive] = useState(false)
     return (
-        <div className="flex justify-end gap-x-2">
+        <div className="flex justify-end gap-x-2 bg-white ">
             <Search onClick={() => setactive(true)} className="hover:text-primary cursor-pointer" />
             <Menu className="hover:text-primary cursor-pointer" />
             <ProductCart />

@@ -2,6 +2,7 @@
 "use client";
 import { ChevronRight, Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -17,7 +18,7 @@ function GrouphoverCategories() {
                     <span className="text-lg">Categories</span>
                 </h1>
                 {active &&
-                    <div className="absolute top-full left-0   w-full bg- shadow-lg z-1 py-3">
+                    <div className="absolute top-full left-0 bg-white   w-full   py-3">
 
                         {
                             menuData.map((item, index) => (
@@ -32,13 +33,30 @@ function GrouphoverCategories() {
                                     <span className="block font-semibold pl-3 group-hover:text-primary">Categories</span>
                                     <ChevronRight className="w-5 ml-auto" />
 
-                                    <div className="absolute top-full h-full w-full left-0">
+
+                                    <div className="absolute top-0 h-full o  bg-white w-full left-full">
+                                        <div className="py-2 px-2 pb-2 mb-2">
+                                            <ul>
+                                                {menuData.map((items) => (
+
+
+                                                    <li key={items}> <Link className="w-full flex justify-between py-3 border-b" href={""}>
+                                                        Sub category item
+                                                        <ChevronRight />
+                                                    </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
 
                                     </div>
-
                                 </div>
+
                             ))
+
+
                         }
+
                     </div>}
 
 

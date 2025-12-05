@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 function MineLayout({ children }: { children: ReactNode }) {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex bg-gray-50 flex-col min-h-screen">
             <PublicHider />
             <div className="flex-1">
                 {children}
