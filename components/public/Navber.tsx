@@ -12,7 +12,7 @@ function Navber() {
                     </div>
 
                     <div className=" ">
-                        <ul className="flex pl-5 font-semibold">
+                        <ul className="flex pl-5 ">
                             <li className="flex items-center pr-3 hover:text-primary h-12"><Link href={"/"}>Home</Link></li>
                             <li className="flex items-center pr-3 hover:text-primary h-12"><Link href={"/"}>Shop</Link></li>
                             <li className="flex items-center pr-3 hover:text-primary h-12"><Link href={"/"}>Campaign</Link></li>
@@ -22,7 +22,7 @@ function Navber() {
                             <li className="relative group">
                                 <Link className="flex items-center pr-3 hover:text-primary h-12" href={"/"}>Pages <ChevronDown className="mt-1.5 w-4" /></Link>
                                 <ul className="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible  p-2  border-t-3 border-primary
-                                     left-0 top-12 w-44 bg-white shadow-lg font-semibold h-40">
+                                     left-0 top-12 w-44 bg-white shadow-lg  h-40">
                                     <li><Link className="flex hover:text-primary items-center " href={"/"}><ChevronRight className="w-5" />About Us</Link></li>
                                     <li><Link className="flex hover:text-primary items-center" href={"/"}><ChevronRight className="w-5" />How It Works</Link></li>
                                     <li><Link className="flex hover:text-primary items-center" href={"/"}><ChevronRight className="w-5" />Privacy Policy</Link></li>

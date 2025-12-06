@@ -30,27 +30,49 @@ function GrouphoverCategories() {
                                         alt="Product"
                                         className="w-12 h-12 object-cover group-hover:rotate-y-180"
                                     />
-                                    <span className="block font-semibold pl-3 group-hover:text-primary">Categories</span>
+                                    <span className="block  pl-3 group-hover:text-primary">Categories</span>
                                     <ChevronRight className="w-5 ml-auto" />
 
 
-                                    <div className="absolute top-0 h-full o  bg-white w-full left-full">
-                                        <div className="py-2 px-2 pb-2 mb-2">
+                                    <div className="absolute top-0 h-full group/sub  opacity-0 invisible group-hover:opacity-100 group-hover:visible   bg-white w-full left-full">
+                                        <div className="py-2 px-2  pb-2 mb-2">
                                             <ul>
                                                 {menuData.map((items) => (
 
 
-                                                    <li key={items}> <Link className="w-full flex justify-between py-3 border-b" href={""}>
+                                                    <li key={items}> <Link className="w-full hover:text-primary flex justify-between py-3 border-b" href={""}>
                                                         Sub category item
                                                         <ChevronRight />
                                                     </Link>
                                                     </li>
                                                 ))}
+                                                <div className="absolute top-0 h-full opacity-0 group-hover/sub:opacity-100 group-hover/sub:visible invisible     bg-white w-full left-full">
+                                                    <div className="py-2 px-2 pb-2 mb-2">
+                                                        <ul>
+                                                            {menuData.map((itemes) => (
+
+
+                                                                <li key={itemes}> <Link className="w-full flex justify-between py-3 border-b" href={""}>
+                                                                    Sub category item
+                                                                    <ChevronRight />
+                                                                </Link>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
                                             </ul>
+
                                         </div>
 
                                     </div>
+
+
+
+
                                 </div>
+
 
                             ))
 
