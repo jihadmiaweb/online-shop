@@ -30,14 +30,14 @@ function ProductSearchForm() {
     }, [text])
 
     return (
-        <div className="px-6 flex-1">
+        <div className="px-6 flex-1 ">
             <div className="relative">
                 <input value={text} onChange={(e) => settext(e.target.value)} className="border w-full p-2" type="text" />
                 <button className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer hover:text-primary">
                     <Search />
                 </button>
                 {text &&
-                    <div className="absolute top-full left-0 w-full border flex flex-col justify-between">
+                    <div className="absolute z-4 bg-white  top-full left-0 w-full border flex flex-col justify-between">
                         <div className="p-3 overflow-y-scroll h-64">
                             {searchData.length == 0 && <div className="text-center py-5">No data found</div>}
                             {searchData.map((item: any) => (
