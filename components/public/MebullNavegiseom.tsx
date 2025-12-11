@@ -1,5 +1,5 @@
-
 "use client"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useNavigationStore } from '@/store/navigation.store'
 import { ChevronDown, ChevronRight, X } from 'lucide-react'
@@ -186,20 +186,21 @@ export default function MobileNavigation() {
         updateCategories(categoriesData)
     }, [updateCategories])
 
-    const ubdatecolps = (id: string) => {
-        const ubdatecolpss = categories.map(cat => {
+    const updateCollapse = (id: string) => {
+        const updateCategoriesData = categories.map(cat => {
             if (cat.id == id) {
                 return {
                     ...cat,
                     isActive: !cat.isActive
                 }
             } else {
-                return cat
-
+                return cat;
             }
         })
-        updateCategories(ubdatecolpss)
+
+        updateCategories(updateCategoriesData)
     }
+
 
     return (
         <>
@@ -268,31 +269,29 @@ export default function MobileNavigation() {
                                                 <Link className="flex group-hover:text-primary" href={"/"}><ChevronRight width={20} /> {category.title}</Link>
                                                 {category.children.length > 0 &&
                                                     <>
-                                                        <span className="w-6 h-6 bg-gray-200 flex justify-center items-center hover:bg-primary cursor-pointer">
-                                                            <ChevronDown onClick={() => ubdatecolps(category.id)} className="group-hover:text-primary hover:text-white" size={20} />
+                                                        <span onClick={() => updateCollapse(category.id)} className="w-6 h-6 bg-gray-200 flex justify-center items-center hover:bg-primary cursor-pointer">
+                                                            <ChevronDown className="group-hover:text-primary hover:text-white" size={20} />
                                                         </span>
-                                                        {category.children.map(sub1 => (
-                                                            <>
-                                                                {category.isActive &&
-                                                                    <ul className="w-full border-l ml-5 pl-4">
-                                                                        <li key={sub1.id} className="my-1 relative before:absolute before:w-2 before:border-t before:-left-4 before:opacity-40 before:top-3.5">
-                                                                            <Link className="hover:text-primary" href={"/"}>{sub1.title}</Link>
-                                                                        </li>
-                                                                        {category.children.map(sub2 => (
-                                                                            <>
-                                                                                <ul className="w-full border-l pl-4">
-                                                                                    <li key={sub2.id}
-                                                                                        className="my-1 relative before:absolute before:w-2 before:border-t before:-left-4 before:opacity-40 before:top-3.5">
+
+                                                        {category.isActive &&
+                                                            <ul className="w-full border-l ml-5 pl-4">
+                                                                {category.children.map(sub1 => (
+                                                                    <li key={sub1.id} className="my-1 relative before:absolute before:w-2 before:border-t before:-left-4 before:opacity-40 before:top-3.5">
+                                                                        <Link className="hover:text-primary" href={"/"}>{sub1.title}</Link>
+
+                                                                        {sub1.children.length > 0 &&
+                                                                            <ul className="w-full border-l pl-4">
+                                                                                {sub1.children.map(sub2 => (
+                                                                                    <li key={sub2.id} className="my-1 relative before:absolute before:w-2 before:border-t before:-left-4 before:opacity-40 before:top-3.5">
                                                                                         <Link className="hover:text-primary" href={"/"}>{sub2.title}</Link>
                                                                                     </li>
-                                                                                </ul>
-                                                                            </>
-                                                                        ))}
-                                                                    </ul>
-                                                                }
-                                                            </>
-                                                        ))}
-
+                                                                                ))}
+                                                                            </ul>
+                                                                        }
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        }
                                                     </>
                                                 }
                                             </li>
