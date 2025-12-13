@@ -1,3 +1,5 @@
+import Services from "@/components/page/home/services";
+import Slider from "@/components/page/home/slider";
 
 
 
@@ -5,7 +7,9 @@
 export default function Home() {
   return (
     <div>
-      <h1>hhhhhhhhhhh</h1>
+      <Slider />
+      <Services />
+
     </div>
   )
 }
